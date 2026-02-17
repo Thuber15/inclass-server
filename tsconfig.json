@@ -7,8 +7,9 @@
     "outDir": "dist",
     "strict": true,
     "jsx": "react-jsx",
-    "noImplicitAny": true,
-    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
     "skipLibCheck": true
   },
   "include": ["src/**/*"]

@@ -15,12 +15,12 @@ evaluationsRouter.post("/", async (req: Request, res: Response) => {
   const body: NewEvaluation = parsed.data;
 
   if (body.operation === "/" && body.value2 === 0) {
-    return res.status(400).json({ error: "Division by zero not allowed." });
+    return res.status(400).json({ error: "Cannot divide by zero." });
   }
 
   await pool.execute(
     "INSERT INTO evaluations (value1, value2, operation, answer) VALUES (?, ?, ?, ?)",
-    [body.value1, body.value2, body.operation, body.answer]
+    [body.value1, body.value2, body.operation, body.answer],
   );
 
   res.status(201).json({ ok: true });
