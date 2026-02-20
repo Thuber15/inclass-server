@@ -30,3 +30,5 @@ evaluationsRouter.get("/", async (_req: Request, res: Response) => {
   const [rows] = await pool.query("SELECT * FROM evaluations ORDER BY id DESC");
   res.json(rows as EvaluationRow[]);
 });
+
+console.log("Evaluations router loaded.");
