@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/health", (_req, res) => res.json({ ok: true }));
-app.use("/evaluations", evaluationsRouter);
+app.use("/", evaluationsRouter);
 
 const port = Number(process.env.PORT ?? "3000");
 app.listen(port, () => {
